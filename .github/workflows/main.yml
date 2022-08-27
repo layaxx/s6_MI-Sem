@@ -1,0 +1,34 @@
+name: Compile latex
+on: 
+  push:
+    branches:
+      - main
+  workflow_dispatch: 
+
+jobs:
+  compile-latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository 
+        uses: actions/checkout@v3
+      - name: Compile LaTeX
+        uses: antaljanosbenjamin/compile-latex@v1.0.0
+        with:
+          file: main.tex
+          args: -pdf
+      - name: Check if Copile was successfull
+        run: '(test -f main.pdf && echo PDF exists) || (echo PDF does not exist && exit 1)'
+      - name: Commit file to build branch
+        run: |
+          git config --local core.autocrlf false
+          git config --local user.email "${{ github.actor }}@users.noreply.github.com"
+          git config --local user.name "${{ github.actor }}"
+          git fetch
+          git checkout -b temp
+          git reset origin/build
+          git checkout build
+          git branch -d temp
+          git add -f main.pdf && git add -f --renormalize main.pdf
+          git commit --allow-empty -am "AUTO-GH ACTION: ${{ github.workflow }}"
+          NO_PAGER=1 git --no-pager diff HEAD^
+          git push origin build
