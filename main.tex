@@ -1,0 +1,66 @@
+\documentclass[runningheads]{llncs}
+\usepackage{graphicx}
+
+% Gets rid of font shapes not available warnings
+\usepackage[utf8]{inputenc}
+
+% uses files for each chapter
+\usepackage{subfiles}
+ 
+\usepackage{hyperref}
+
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+\usepackage{color}
+\renewcommand\UrlFont{\color{blue}\rmfamily}
+
+\begin{document}
+
+\title{Corpora Evaluation and System Bias Detection in Multi-document Summarization}
+\subtitle{A critical approach}
+
+%
+\titlerunning{Corpora Evaluation and System Bias Detection}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+\institute{University of Bamberg, Bamberg, Germany\\
+    \email{yannick-stephan.lang@stud.uni-bamberg.de}}
+
+\author{Yannick Lang \\
+    \small Study Program: B.Sc. Applied Computer Science }
+
+\authorrunning{Y. Lang}
+
+%
+\maketitle              % typeset the header of the contribution
+%
+\begin{abstract}
+    The abstract should briefly summarize the contents of the paper in
+    150--250 words.
+    
+    \keywords{First keyword  \and Second keyword \and Another keyword.}
+\end{abstract}
+%
+%
+%
+
+\section{Introduction}
+\label{sec:introcution}
+\subfile{sections/10_introduction}
+
+\section{Introduction}
+\subsection{A Subsection Sample}
+Please note that the first   paragraph of a section or subsection is
+not indented. The first paragraph that follows a table, figure,
+equation etc. does not need an indent, either.
+
+Subsequent paragraphs, however, are indented.\cite{Poisonin18:online}
+
+\subsubsection{Sample Heading (Third Level)} Only two levels of
+headings should be numbered. Lower level headings remain unnumbered;
+they are formatted as run-in headings.
+
+\bibliographystyle{splncs04}
+\bibliography{references}
+\end{document}
