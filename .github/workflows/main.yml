@@ -17,10 +17,10 @@ jobs:
           git config --local user.email "${{ github.actor }}@users.noreply.github.com"
           git config --local user.name "${{ github.actor }}"
           git checkout -b temp
-          git reset build
-          git checkout build
+          git reset origin/build
+          git checkout origin/build
           git branch -d temp
           git add -f main.pdf && git add -f --renormalize main.pdf
           git commit --allow-empty -am "AUTO-GH ACTION: ${{ github.workflow }}"
           NO_PAGER=1 git --no-pager diff HEAD^
-          git push
+          git push origin build
