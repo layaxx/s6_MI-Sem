@@ -1,17 +1,24 @@
-name: test
-on: [push]
+name: Compile latex
+on: 
+  push:
+    branches:
+      - main
+  workflow_dispatch: 
+
 jobs:
   compile-latex:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: antaljanosbenjamin/compile-latex@v1.0.0
+      - name: Set up Git repository 
+        uses: actions/checkout@v3
+      - name: Compile LaTeX
+        uses: antaljanosbenjamin/compile-latex@v1.0.0
         with:
           file: main.tex
           args: -pdf
-      - run: '(test -f main.pdf && echo PDF exists) || (echo PDF does not exist && exit 1)'
-      - run: 'ls -alh'
-      - name: Commit file
+      - name: Check if Copile was successfull
+        run: '(test -f main.pdf && echo PDF exists) || (echo PDF does not exist && exit 1)'
+      - name: Commit file to build branch
         run: |
           git config --local core.autocrlf false
           git config --local user.email "${{ github.actor }}@users.noreply.github.com"
