@@ -18,7 +18,7 @@ jobs:
           git config --local user.name "${{ github.actor }}"
           git fetch
           git checkout -b temp
-          git reset build
+          git reset origin/build
           git checkout build
           git branch -d temp
           git add -f main.pdf && git add -f --renormalize main.pdf
