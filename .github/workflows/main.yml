@@ -10,9 +10,11 @@ jobs:
           file: main.tex
           args: -pdf
       - run: '(test -f main.pdf && echo PDF exists) || (echo PDF does not exist && exit 1)'
+      - run: 'ls -alh'
       - uses: actions/checkout@v3
         with:
           ref: build
+      - run: 'ls -alh'
       - name: Commit file
         run: |
           git config --local core.autocrlf false
