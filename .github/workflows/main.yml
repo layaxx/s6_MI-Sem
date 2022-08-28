@@ -11,13 +11,23 @@ jobs:
     steps:
       - name: Set up Git repository 
         uses: actions/checkout@v3
-      - name: Compile LaTeX
-        uses: antaljanosbenjamin/compile-latex@v1.0.0
+      - name: pdflatex main
+        uses: dante-ev/latex-action@latest
         with:
-          file: main.tex
-          args: -pdf
-      - name: Check if Copile was successfull
-        run: '(test -f main.pdf && echo PDF exists) || (echo PDF does not exist && exit 1)'
+          root_file: main.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -shell-escape
+      - name: bibtex main
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: main.aux
+          compiler: bibtex
+      - name: pdflatex main
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: main.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -shell-escape
       - name: Commit file to build branch
         run: |
           git config --local core.autocrlf false
