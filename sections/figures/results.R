@@ -44,9 +44,9 @@ maximums <- as.list(rowMax(m))
 names(maximums) <- rownames(m)
 
 df <- melt(m)
-colnames(df) <- c("dataset", "system", "value")
+colnames(df) <- c("corpus", "system", "value")
 
-ggplot(df, aes(x = system, y = dataset, fill = ifelse(value == 1, NA, value))) +
+ggplot(df, aes(x = system, y = corpus, fill = ifelse(value == 1, NA, value))) +
   geom_tile(color = "black") +
   geom_text(aes(label = value), color = "black", size = 4) +
   coord_fixed() +
@@ -60,8 +60,6 @@ ggplot(df, aes(x = system, y = dataset, fill = ifelse(value == 1, NA, value))) +
   scale_x_discrete(position = "top") +
   theme(
     axis.line = element_blank(),
-    axis.title.x = element_blank(),
-    axis.title.y = element_blank(),
     legend.position = "none",
     panel.background = element_blank()
   )
