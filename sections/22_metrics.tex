@@ -1,0 +1,34 @@
+\documentclass[20_original-paper.tex]{subfiles}
+\begin{document}
+
+The paper proposes a list of metrics which can be used to gauge the quality of a corpus. These metrics are:
+
+\begin{itemize}
+    \item \textbf{Inter Document Similarity} shows the similarity between each documents
+    \item \textbf{Pyramid Score} "defined as the ratio of a reference summary score and an optimal summary score"\cite{dey-etal-2020-corpora},
+          i.e. how good the reference summaries are
+    \item \textbf{Inverse Pyramid Score} measures the influence of documents on a given summary
+    \item \textbf{Redundancy} describes the density of information in the documents
+\end{itemize}
+
+In addition, they also suggest a list of metrics that can be used to evaluate the performance of a given MDS systems:
+
+\begin{itemize}
+    \item \textbf{ROUGE} one of the most basic metrics in text summarization,
+          used to measure similarity between generated summaries and the references included in the dataset via recall
+          % WHEN was ROUGE first introduced?
+    \item \textbf{F1 Score} - similar to ROUGE but considers both recall and precision
+    \item \textbf{Inter Document Distribution} - similar to Inverse Pyramid Score, this measures the influence of each document on the generated summary
+    \item \textbf{Redundancy} describes the summaries coverage of information from the documents
+
+\end{itemize}
+
+There are also metrics that can be applied to both corpus and system, where the reference summary is used for corpus evaluation and the generated summary for system evaluation.
+
+\begin{itemize}
+    \item \textbf{Abstractness} quantifies the similarity between the generated or reference summary and the associated documents, where less similarity means higher abstractness
+    \item \textbf{Layout Bias} quantifies the distribution of information within a document for corpora and the distribution of sections in the documents that provide the information in the generated summary for systems
+\end{itemize}
+
+
+\end{document}
