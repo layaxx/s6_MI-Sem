@@ -26,26 +26,37 @@ dataR2 <- data.frame(
   himap = c(8.9, 4.61, 1.46, 14.89, 4.69),
   row.names = c("DUC", "TAC", "Opin", "Multin", "CQAS")
 )
+dataF1 <- data.frame(
+  lexrank = c(31.34, 31.51, 31.05, 41.01, 49.71),
+  textrank = c(40.8, 29.69, 31, 38.44, 46.3),
+  mmr = c(30.57, 28.3, 31.8, 42.07, 45.48),
+  icsisumm = c(24.27, 27.82, 29.83, 44.71, 50.98),
+  pg = c(23.08, 26.32, 16.08, 43.89, 21.85),
+  pgmmr = c(24.3, 26.9, 16.39, 43.93, 21.72),
+  trans = c(15.72, 17.82, 16.38, 44.54, 21.35),
+  himap = c(25.89, 24.3, 20.36, 42.55, 19.84),
+  row.names = c("DUC", "TAC", "Opin", "Multin", "CQAS")
+)
 
-m <- as.matrix(dataR1)
+m <- as.matrix(apply(apply(dataR1, 1, rank), 1, rev))
 
 maximums <- as.list(rowMax(m))
 names(maximums) <- rownames(m)
 
 df <- melt(m)
 colnames(df) <- c("dataset", "system", "value")
-for (i in 1:nrow(df)) {
-  value <- df$value[[i]]
-  dataset <- df$dataset[[i]]
-  maxValue <- maximums[[dataset]]
 
-  df$fill[[i]] <- ifelse(value == maxValue, 100, 0)
-}
-
-ggplot(df, aes(x = system, y = dataset, fill = fill)) +
+ggplot(df, aes(x = system, y = dataset, fill = ifelse(value == 1, NA, value))) +
   geom_tile(color = "black") +
   geom_text(aes(label = value), color = "black", size = 4) +
   coord_fixed() +
+  scale_fill_gradient2(
+    na.value = "#4459d6",
+    low = "blue",
+    mid = "darkgray",
+    high = "white",
+    midpoint = 1
+  ) +
   scale_x_discrete(position = "top") +
   theme(
     axis.line = element_blank(),
