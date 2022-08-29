@@ -5,9 +5,31 @@
 %  => System performance depends on corpus, but often custom corpus used
 
 % are biases apart from layout bias really considered?
+Regarding biases, the paper focuses mostly on structural as opposed to contentual biases.
+The key bias highlighted in the paper is layout bias, i.e. the influence a tokens position in the document has on the likelihood of making it into the summary.
+The authors prove empirically, that layout bias present in a corpus carries over to trained models.
+
+Layout Bias can be especially prominent int news articles, which make up a lot of (particularly early, i.e. early 2000) MDS corpora.
+This prominence can be explained by the availability of news articles as well as the combination and summarization and news articles being a valid real-world use case for MDS.
+Layout bias in news articles usually has a simple cause: reporters aim to provide readers with an overview over the topic within the first few sentences.
+This leads to a higher amount of summary relevant information in these sentences.
+A system trained on a news corpus may now perform significantly worse on a collection of documents that either have no layout bias at all or a different, not as front-loaded, kind of layout bias.
+
+A further key observation from the paper is that abstractness in the training corpus is correlated with the abstractness of system generated content.
+
+For the explicit causes of the corpus bias to system prediction bias pipeline and potential counter measures, the authors point to future research possibilities.
 
 The authors state that a lack of clear definition for MDS tasks leads to a lack of a single standardized dataset.
 Instead, most scientists provide their own custom dataset with newly proposed MDS systems.
-This leads to a lack of comparability for the performance of systems, as this heavily depends on the actual dataset.\cite{dey-etal-2020-corpora}
+This severely reduces the comparability between systems for two reasons.
+
+For one, the authors have established the influence a specific dataset can have on common performance of MDS system (see \ref{sec:results}). Therefore, the reported performance of a newly proposed system could be inflated when it is only evaluated on a custom corpus as compared with established corpora.
+
+However, using an existing corpus may not always be viable, due to the unstandardized nature of MDS tasks.
+To increase comparability between datasets, the authors thus aim to establish metrics for comparing datasets.
+In order to be useful, these metrics should be reported by researchers creating a new corpus.
+For this, the authors divide the metrics into objective and subjective.
+Objective metrics include Pyramid and Inverse Pyramid Scores and are assigned a higher importance by the authors, who state those two "must be
+reported as they are strong indicators of generic corpus quality"\cite{dey-etal-2020-corpora}.
 
 \end{document}
