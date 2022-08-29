@@ -38,7 +38,7 @@ dataF1 <- data.frame(
   row.names = c("DUC", "TAC", "Opin", "Multin", "CQAS")
 )
 
-m <- as.matrix(apply(apply(dataR1, 1, rank), 1, rev))
+m <- as.matrix(apply(apply(dataF1, 1, rank), 1, rev))
 
 maximums <- as.list(rowMax(m))
 names(maximums) <- rownames(m)

@@ -15,8 +15,7 @@ In addition, they also suggest a list of metrics that can be used to evaluate th
 
 \begin{itemize}
     \item \textbf{ROUGE} one of the most basic metrics in text summarization,
-          used to measure similarity between generated summaries and the references included in the dataset via recall
-          % WHEN was ROUGE first introduced?
+          used to measure similarity between generated summaries and the references included in the dataset via recall \cite{lin-2004-rouge}
     \item \textbf{F1 Score} - similar to ROUGE but considers both recall and precision
     \item \textbf{Inter Document Distribution} - similar to Inverse Pyramid Score, this measures the influence of each document on the generated summary
     \item \textbf{Redundancy} describes the summaries coverage of information from the documents
@@ -29,6 +28,10 @@ There are also metrics that can be applied to both corpus and system, where the 
     \item \textbf{Abstractness} quantifies the similarity between the generated or reference summary and the associated documents, where less similarity means higher abstractness
     \item \textbf{Layout Bias} quantifies the distribution of information within a document for corpora and the distribution of sections in the documents that provide the information in the generated summary for systems
 \end{itemize}
+
+The authors later group those metrics into subjective and objective metrics.
+They assign the highest importance to the objective metrics of Pyramid Score and Inverse Pyramid Score,
+and propose that scientists introducing new MDS corpora should at least report values for those, although ideally all metrics should be considered.
 
 
 \end{document}

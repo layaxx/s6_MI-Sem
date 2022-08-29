@@ -1,8 +1,58 @@
 \documentclass[20_original-paper.tex]{subfiles}
 \begin{document}
 
-
 % How often has this paper been cited?
 %   What are the citations for, do they use the metrics, discuss them, build upon them...
+
+But did this paper have any impact? Did the other scientists build upon these proposed metrics or apply them to their own system or corpus?
+
+To answer this question, we will perform a forward search, i.e. look at other papers referencing "Corpora Evaluation and System Bias detection in Multi Document Summarization".
+
+During the almost two years since its publication in October 2020, this paper was referenced 5 times. SemanticScholar.org classifies those citations into three categories: \cite{Cohan2019StructuralSF}
+
+\begin{itemize}
+    \item Background - 3 citations
+    \item Methods - 1 citation
+    \item Results - 1 citation
+\end{itemize}
+
+It also identifies one citation, namely "ConvoSumm: Conversation Summarization Benchmark and Improved Abstractive Summarization with Argument Mining" (ConvoSumm)\cite{Fabbri2021ConvoSummCS},
+as "highly influential"\cite{Valenzuela2015IdentifyingMC}.
+ConvoSumm propose a benchmark of summaries and performances for four "widely-used datasets".
+The authors use the Inter-document Similarity, Redundancy and Layout Bias metrics proposed in the original paper to evaluate their data.
+They also publish the results and their key finding from applying the metrics, which is a reduced layout bias in their data compared with the mostly news focused datasets that were used in the original paper.
+
+The choice of metrics sounds reasonable, but deviates from the original papers authors assessment of the metrics importance.
+Dey et al. consider Pyramid Score and Inverse Pyramid score to be the most objective and most important metrics to report.\cite{dey-etal-2020-corpora}
+
+Another paper, "Two-phase Multi-document Event Summarization on Core Event Graphs" \cite{Chen2022TwophaseME}, also uses a selection of proposed metrics to evaluate their datasets.
+
+The other three papers that reference the original paper do so in a minor way.
+They use it to back up general statements or disclaimers about MDS corpora potentially containing bias the possibility of bias propagating to the generated content. \cite{Moro2022SemanticSF,Adams2021WhatsIA,Counseling}
+
+An overview over the types of citations is given in \ref{tab:impact}.
+
+In summary, it can be stated that the original paper has not yet had a lot of impact, which is not surprising given its somewhat recent publishing at the end of 2020.
+Two of the five studies that reference this paper actually use the proposed metrics, however it stands out that neither of those use the two metrics the original authors deemed most important.
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{lllll}
+        \multicolumn{5}{c}{uses metrics}                                                                                                                                            \\ \hline
+        \multicolumn{1}{l|}{}                                       & \rotatebox{90}{IDS} & \rotatebox{90}{Abstractness} & \rotatebox{90}{Layout Bias} & \rotatebox{90}{Redundancy} \\ \hline
+        \multicolumn{1}{l|}{ConvoSumm \cite{Fabbri2021ConvoSummCS}} & x                   &                              & x                           & x                          \\
+        \multicolumn{1}{l|}{2-Phase \cite{Chen2022TwophaseME}}      & x                   & x                            &                             &                            \\ \hline
+    \end{tabular}
+    \quad
+    \begin{tabular}{ll}
+        \multicolumn{2}{c}{generic citation}                                                \\ \hline
+        \multicolumn{1}{l|}{}                                           & citation for:     \\ \hline
+        \multicolumn{1}{l|}{Segmentation \cite{Cohan2019StructuralSF}}  & existence of bias \\
+        \multicolumn{1}{l|}{What is a Summary? \cite{Adams2021WhatsIA}} & existence of bias \\
+        \multicolumn{1}{l|}{Counseling \cite{Counseling}}               & past studies      \\ \hline
+    \end{tabular}
+    \caption{Breakdown of the context in which the five papers reference the original paper. In the left table, only metrics that were used are displayed, the x character indicates that this paper used this metric.}
+    \label{tab:impact}
+\end{table}
 
 \end{document}

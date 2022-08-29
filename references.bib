@@ -14,7 +14,72 @@
   doi       = {10.18653/v1/2020.findings-emnlp.254},
   pages     = {2830--2840},
   abstract  = {Multi-document summarization (MDS) is the task of reflecting key points from any set of documents into a concise text paragraph. In the past, it has been used to aggregate news, tweets, product reviews, etc. from various sources. Owing to no standard definition of the task, we encounter a plethora of datasets with varying levels of overlap and conflict between participating documents. There is also no standard regarding what constitutes summary information in MDS. Adding to the challenge is the fact that new systems report results on a set of chosen datasets, which might not correlate with their performance on the other datasets. In this paper, we study this heterogeneous task with the help of a few widely used MDS corpora and a suite of state-of-theart models. We make an attempt to quantify the quality of summarization corpus and prescribe a list of points to consider while proposing a new MDS corpus. Next, we analyze the reason behind the absence of an MDS system which achieves superior performance across all corpora. We then observe the extent to which system metrics are influenced, and bias is propagated due to corpus properties. The scripts to reproduce the experiments in this work are available at https://github.com/LCS2-IIITD/summarization{\_}bias.git}
-} 
-
-
-‌
+}
+@inproceedings{Valenzuela2015IdentifyingMC,
+  title     = {Identifying Meaningful Citations},
+  author    = {Marco Valenzuela and Vu A. Ha and Oren Etzioni},
+  booktitle = {AAAI Workshop: Scholarly Big Data},
+  year      = {2015}
+}
+@inproceedings{Cohan2019StructuralSF,
+  title     = {Structural Scaffolds for Citation Intent Classification in Scientific Publications},
+  author    = {Arman Cohan and Waleed Ammar and Madeleine van Zuylen and Field Cady},
+  booktitle = {NAACL},
+  year      = {2019}
+}
+@inproceedings{Fabbri2021ConvoSummCS,
+  title     = {ConvoSumm: Conversation Summarization Benchmark and Improved Abstractive Summarization with Argument Mining},
+  author    = {Alexander R. Fabbri and Faiaz Rahman and Imad Rizvi and Borui Wang and Haoran Li and Yashar Mehdad and Dragomir Radev},
+  booktitle = {ACL},
+  year      = {2021}
+}
+@inproceedings{lin-2004-rouge,
+  title     = {{ROUGE}: A Package for Automatic Evaluation of Summaries},
+  author    = {Lin, Chin-Yew},
+  booktitle = {Text Summarization Branches Out},
+  month     = jul,
+  year      = {2004},
+  address   = {Barcelona, Spain},
+  publisher = {Association for Computational Linguistics},
+  url       = {https://aclanthology.org/W04-1013},
+  pages     = {74--81}
+}
+@article{Chen2022TwophaseME,
+  title   = {Two-phase Multi-document Event Summarization on Core Event Graphs},
+  author  = {Zengjian Chen and Jin Xu and M. Liao and Tong Xue and Kun He},
+  journal = {J. Artif. Intell. Res.},
+  year    = {2022},
+  volume  = {74},
+  pages   = {1037-1057}
+}
+‌@inproceedings{Moro2022SemanticSF,
+  title     = {Semantic Self-Segmentation for Abstractive Summarization of Long Documents in Low-Resource Regimes},
+  author    = {Gianluca Moro and Luca Ragazzi},
+  booktitle = {AAAI},
+  year      = {2022}
+}
+@article{Adams2021WhatsIA,
+  title   = {What’s in a Summary? Laying the Groundwork for Advances in Hospital-Course Summarization},
+  author  = {Griffin Adams and Emily Alsentzer and Mert Ketenci and Jason E Zucker and No{\'e}mie Elhadad},
+  journal = {Proceedings of the conference. Association for Computational Linguistics. North American Chapter. Meeting},
+  year    = {2021},
+  volume  = {2021},
+  pages   = {4794-4811}
+}
+@inproceedings{Counseling,
+  author    = {Srivastava, Aseem and Suresh, Tharun and Lord, Sarah P. and Akhtar, Md Shad and Chakraborty, Tanmoy},
+  title     = {Counseling Summarization Using Mental Health Knowledge Guided Utterance Filtering},
+  year      = {2022},
+  isbn      = {9781450393850},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3534678.3539187},
+  doi       = {10.1145/3534678.3539187},
+  abstract  = {The psychotherapy intervention technique is a multifaceted conversation between a therapist and a patient. Unlike general clinical discussions, psychotherapy's core components (viz. symptoms) are hard to distinguish, thus becoming a complex problem to summarize later. A structured counseling conversation may contain discussions about symptoms, history of mental health issues, or the discovery of the patient's behavior. It may also contain discussion filler words irrelevant to a clinical summary. We refer to these elements of structured psychotherapy as counseling components. In this paper, the aim is mental health counseling summarization to build upon domain knowledge and to help clinicians quickly glean meaning. We create a new dataset after annotating 12.9K utterances of counseling components and reference summaries for each dialogue. Further, we propose ConSum, a novel counseling-component guided summarization model. ConSum undergoes three independent modules. First, to assess the presence of depressive symptoms, it filters utterances utilizing the Patient Health Questionnaire (PHQ-9), while the second and third modules aim to classify counseling components. At last, we propose a problem-specific Mental Health Information Capture (MHIC) evaluation metric for counseling summaries. Our comparative study shows that we improve on performance and generate cohesive, semantic, and coherent summaries. We comprehensively analyze the generated summaries to investigate the capturing of psychotherapy elements. Human and clinical evaluations on the summary show that ConSum generates quality summary. Further, mental health experts validate the clinical acceptability of the ConSum. Lastly, we discuss the uniqueness in mental health counseling summarization in the real world and show evidences of its deployment on an online application with the support of mpathic.ai},
+  booktitle = {Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+  pages     = {3920–3930},
+  numpages  = {11},
+  keywords  = {dialogue summarization, natural language processing},
+  location  = {Washington DC, USA},
+  series    = {KDD '22}
+}
