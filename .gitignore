@@ -316,3 +316,4 @@ TSWLatexianTemp*
 
 # End of https://www.toptal.com/developers/gitignore/api/latex
 .~lock.impact.ods#
+.~lock.analysis.ods#

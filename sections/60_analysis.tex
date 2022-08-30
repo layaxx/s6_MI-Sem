@@ -1,0 +1,34 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+
+For this paper, I will calculate the metrics Dey et al. proposed for MDS corpora to a dataset myself.
+The corpus was selected on the following criteria:
+
+\begin{itemize}
+    \item must be MDS corpus - the metrics were specifically designed for MDS corpora, and some, like Inter Document Similarity, only make sense in this context.
+    \item must not already have been analyzed with these metrics, either in the original paper or by its creators
+    \item should be somewhat recent
+    \item dataset must be publicly available
+\end{itemize}
+
+This last criterion was actually the most constraining. I opted for the "Wikipedia Current Events Portal" (WCEP) dataset, proposed in 2020. \cite{WCEP-gholipour-ghalandari-etal-2020-large}
+It meets all of the conditions mentioned above, as it was published in 2020, was designed explicitly for MDS, does not include the metrics from the original paper (which was published after WCEP) and the authors provide a public download link to the entire dataset on their GitHub.\cite{WCEP-Github-complementizer_2022}
+
+
+Although the original papers authors state that they "develop an interactive web portal for imminent corpora to be uploaded and evaluated based
+on [their] proposed metrics", I was unable to find any link or other kind of reference to this.
+The paper does, however, include a link to the source code for their analysis on GitHub, which serves as the starting point for analysis of WCEP.
+
+For this paper I have forked the repository and updated the code for the corpus metrics to work with the WCEP dataset.
+I have also added documentation on how to use the code and which format the data is expected to have, which is missing in the original version.
+
+I have not been able to measure the Layout Bias and the Pyramid Scores, as it is unclear to me what format the original authors code expect for the input to calculation.
+
+The WCEP dataset is split into 3 parts, a vary large training set and the test and validation sets, which each make up about 10 percent of the total amount.
+For this evaluation, I treated them as separate datasets, so that I could determine if they are homogenous.
+
+% TODO: include values from benchmark
+% add link to github repo
+
+\end{document}

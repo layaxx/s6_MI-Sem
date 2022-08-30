@@ -27,5 +27,5 @@
   "latex-workshop.latex.rootFile.useSubFile": false,
   "latex-workshop.linting.run": "onType",
   "latex-workshop.texcount.autorun": "onSave",
-  "cSpell.words": ["Convo", "Summ"]
+  "cSpell.words": ["Convo", "Summ", "WCEP"]
 }

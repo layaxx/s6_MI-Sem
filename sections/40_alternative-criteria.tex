@@ -1,18 +1,29 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
+In the last section we determined that, as of August 2022, no paper has built upon these metrics, either proposing changes to them, criticizing or extending them.
+But are there any other metrics or biases not without direct reference to the original paper?
 
-% TODO:
-% are there any competing metrics?
-% are there at least papers acknowledging possible biases?
+At the beginning of their paper, Dey et al. state the problem of missing standard corpora due the non-standardized tasks of MDS.
+The same is currently true for metrics of bias.
+While the authors aimed to establish a framework for this, the previous section showed that they have not yet succeeded.
+
+As a result, some papers use different metrics, that may aim at similar attributes. For example, a 2016 paper proposing a new MDS corpus and uses textual heterogeneity as a metric. \cite{zopf_maxime_peyrard_eckle-kohler_2016}
+While not exactly the same, it is introduced to determine the similarity of documents, just as IDS in the original paper.
+
+Similarly, for the "Wikipedia Current Events Portal" (WCEP) dataset,
+which will be analyzed later in in this paper, the authors used "coverage" and "density" metrics to quantify abstractness,
+very similar to the Abstractness metric.\cite{WCEP-gholipour-ghalandari-etal-2020-large}
+
+
+While Dey et al. focus on structural biases, especially Layout Bias, corpora generated from human content, i.e. most if not all corpora, also display biases in their content. These usually carry over through MDS systems into the generated summaries. \cite{nadeem-etal-2021-stereoset}
+
+Even if the training corpus does not contain biases, systems have been shown to introduce biases, such as hallucinations, i.e. statements in the generated summary that are not included in the candidate documents and do not follow from them. This is correlated with exposure bias, caused by differences in documents between training corpus and data used for actual work. \cite{Exposure_bias_wang_sennrich_2020}
+
+
 % paper states that no previous similar study was conducted 
-%  => did any similar studies come after?
 % Did the authors themselves build upon their metrics /improve/change them
 
 % bias for longer sentences https://www.semanticscholar.org/reader/30370906b75eb04792b3f19763292996671517fd
-
-% Textual Heterogeneity -> https://aclanthology.org/C16-1145.pdf
-
-% content Bias from stereotypes -> https://arxiv.org/pdf/2004.09456v1.pdf
 
 \end{document}
