@@ -1,20 +1,31 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
+In this section, the status quo shall be outlined, i.e. how researchers, that propose MDS corpora handle bias and the overall quality of their dataset.
 
-% TODO: MAybe this should be in summary chapter instead
-% Off all recently published papers regarding multi-document summarization:
-%   - how many mention biases at all?
-%       - if mentioned: 
-%           - what metrics are used?
-%           - what are the results? Mitigation strategies?
-%   - how many provide a custom corpus vs use a common one?
+As previously stated, there is no widely accepted framework for this, leading to different approaches by different authors.
+I have selected recent (published in 2020 or later) papers introducing MDS corpora, and will now show their approach to bias and comparability.
+
+\begin{table}
+    \centering
+    \begin{tabular}{llll}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     & mention of bias               & metrics reported                   & \\
+        \textcolor[rgb]{0.651,0.675,0.804}{\textcolor[rgb]{0.537,0.867,1}{\textbackslash{}}\textcolor[rgb]{0.51,0.667,1}{textbf}\textcolor[rgb]{0.537,0.867,1}{\{}\textcolor[rgb]{0.941,0.443,0.471}{\textbf{MS2: Multi-Document Summarization of Medical Studies}}\textcolor[rgb]{0.537,0.867,1}{\}}\textcolor[rgb]{0.537,0.867,1}{\textit{\textbackslash{}cite}}\textcolor[rgb]{0.537,0.867,1}{\{}MS2-https://doi.org/10.48550/arxiv.2104.06486\textcolor[rgb]{0.537,0.867,1}{\}}} & no                            & basic statistics                   & \\
+        \begin{tabular}[c]{@{}l@{}}\textbackslash{}textbf\{\textbf{HowSumm: A Multi-Document Summarization Dataset Derived from WikiHow Articles}\\\}\textbackslash{}cite\{\textcolor[rgb]{0.651,0.675,0.804}{\textcolor[rgb]{1,0.796,0.42}{wikihow-https://doi.org/10.48550/arxiv.2110.03179}}\\\}\end{tabular}                                                                                                                                                                                    & no                            & basic statisics, coverage  density & \\
+        \begin{tabular}[c]{@{}l@{}}\textbackslash{}textbf\{\textbf{QMSum: A New Benchmark for Query-based Multi-domain Meeting Summarization}\\\}\textbackslash{}cite\{\textcolor[rgb]{0.651,0.675,0.804}{\textcolor[rgb]{1,0.796,0.42}{qmsum-https://doi.org/10.48550/arxiv.2104.05938}}\}\end{tabular}                                                                                                                                                                                                                & mentioned, but not quantified & basic statistics                   & \\
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     &                               &                                    &
+    \end{tabular}
+\end{table}
+
+
+
 
 
 % https://arxiv.org/pdf/2106.00829.pdf -> ConvoSumm
-% Bias may be propagated
+% TODO: look at this: Bias may be propagated
 
 % https://paperswithcode.com/paper/a-large-scale-multi-document-summarization A Large-Scale Multi-Document Summarization Dataset from the Wikipedia Current Events Portal -> not mention of bias or metrics, available for download
+% TODO: this could be a good transition to next section
 
 
 \end{document}
