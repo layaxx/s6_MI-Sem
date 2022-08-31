@@ -12,12 +12,12 @@ The corpus was selected on the following criteria:
     \item dataset must be publicly available
 \end{itemize}
 
-This last criterion was actually the most constraining. I opted for the "Wikipedia Current Events Portal" (WCEP) dataset, proposed in 2020. \cite{WCEP-gholipour-ghalandari-etal-2020-large}
+This last criterion was actually the most constraining. I opted for the \enquote{Wikipedia Current Events Portal} (WCEP) dataset, proposed in 2020. \cite{WCEP-gholipour-ghalandari-etal-2020-large}
 It meets all of the conditions mentioned above, as it was published in 2020, was designed explicitly for MDS, does not include the metrics from the original paper (which was published after WCEP) and the authors provide a public download link to the entire dataset on their GitHub.\cite{WCEP-Github-complementizer_2022}
 
 
-Although the original papers authors state that they "develop an interactive web portal for imminent corpora to be uploaded and evaluated based
-on [their] proposed metrics", I was unable to find any link or other kind of reference to this.
+Although the original papers authors state that they \enquote{develop an interactive web portal for imminent corpora to be uploaded and evaluated based
+    on [their] proposed metrics}, I was unable to find any link or other kind of reference to this.
 The paper does, however, include a link to the source code for their analysis on GitHub, which although lacking documentation, served as the starting point for the following analysis of WCEP.
 
 For this paper I have forked the repository and updated the code for the corpus metrics to work with the WCEP dataset.
@@ -34,9 +34,9 @@ For this task, I modified the source code provided by the authors slightly, in o
     \caption{Overview over the benchmark results calculated from the WCEP corpus. Every metric is reported for each of the testing, training and validation subsets of WCEP.} \label{fig:analysis}
 \end{figure}
 
-The results can be seen in \ref{fig:analysis}. "number\_entries" denotes the number of topics in each set, consisting of one reference summary and a set of documents.
-The average number of documents per set is shown as "avg\_documents". "abstractness", "compression", and "redundancy" are the same as described in the original paper.
-With the "relevance" metric, I am unsure whether this is identical to IDS or just a precursor to its calculation.
+The results can be seen in \ref{fig:analysis}. \enquote{number\_entries} denotes the number of topics in each set, consisting of one reference summary and a set of documents.
+The average number of documents per set is shown as \enquote{avg\_documents}. \enquote{abstractness}, \enquote{compression}, and \enquote{redundancy} are the same as described in the original paper.
+With the \enquote{relevance} metric, I am unsure whether this is identical to IDS or just a precursor to its calculation.
 
 While the other metrics were calculated for the complete set, due to high computational demands redundancy and relevance have been calculated on a random sample consisting of 100 topics for each of the three subsets.
 
@@ -61,9 +61,9 @@ The relevancy of the training set is also notably closer to 0 compared with the 
 \end{figure}
 
 \begin{figure}
-    \includegraphics[width=.49\textwidth]{figures/Rplot01.pdf}
-    \includegraphics[width=.49\textwidth]{figures/Rplot02.pdf}
-    \caption{Distributions of summary length and number of articles per topic in the subsets. Left graph showcases subtle differences in length of summary distribution, right graph shows the cause for the difference in average number of articles discussed previously} \label{fig:analysis-distribution}
+    \includegraphics[width=\textwidth]{figures/Rplot01.pdf}
+    \includegraphics[width=\textwidth]{figures/Rplot02.pdf}
+    \caption{Distributions of summary length and number of articles per topic in the subsets. Top graph showcases subtle differences in length of summary distribution, Bottom graph shows the cause for the difference in average number of articles discussed previously.} \label{fig:analysis-distribution}
 \end{figure}
 
 \end{document}
