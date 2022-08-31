@@ -1,37 +1,36 @@
 \documentclass[20_original-paper.tex]{subfiles}
 \begin{document}
 
-The paper proposes a list of metrics which can be used to gauge the quality of a corpus. These metrics are:
+The paper proposes a list of metrics which can be used to gauge certain attributes of a corpus. These metrics are:
 
 \begin{itemize}
-    \item \textbf{Inter Document Similarity} shows the similarity between each documents
-    \item \textbf{Pyramid Score} "defined as the ratio of a reference summary score and an optimal summary score"\cite{dey-etal-2020-corpora},
+    \item \textbf{Inter Document Similarity (IDS)}, which shows the similarity between each documents
+    \item \textbf{Pyramid Score}, "defined as the ratio of a reference summary score and an optimal summary score"\cite{dey-etal-2020-corpora},
           i.e. how good the reference summaries are
-    \item \textbf{Inverse Pyramid Score} measures the influence of documents on a given summary
+    \item \textbf{Inverse Pyramid Score}, which measures the influence of documents on a the reference summaries
     \item \textbf{Redundancy} describes the density of information in the documents
 \end{itemize}
 
-In addition, they also suggest a list of metrics that can be used to evaluate the performance of a given MDS systems:
+For MDS systems, they also present a list of metrics aimed at evaluating the performance and properties of a given MDS systems:
 
 \begin{itemize}
     \item \textbf{ROUGE} one of the most basic metrics in text summarization,
-          used to measure similarity between generated summaries and the references included in the dataset via recall \cite{lin-2004-rouge}
+          which has been used to measure similarity between generated summaries and the references included in the dataset via recall since 2004\cite{lin-2004-rouge}
     \item \textbf{F1 Score} - similar to ROUGE but considers both recall and precision
-    \item \textbf{Inter Document Distribution} - similar to Inverse Pyramid Score, this measures the influence of each document on the generated summary
+    \item \textbf{Inter Document Distribution} - similarly to the Inverse Pyramid Score metric for corpora, this measures the influence of each document on the generated summary
     \item \textbf{Redundancy} describes the summaries coverage of information from the documents
 
 \end{itemize}
 
-There are also metrics that can be applied to both corpus and system, where the reference summary is used for corpus evaluation and the generated summary for system evaluation.
+Additionally, some metrics are suitable for both both corpus and system, where the reference summary is used for corpus evaluation and the generated summary for system evaluation.
 
 \begin{itemize}
     \item \textbf{Abstractness} quantifies the similarity between the generated or reference summary and the associated documents, where less similarity means higher abstractness
-    \item \textbf{Layout Bias} quantifies the distribution of information within a document for corpora and the distribution of sections in the documents that provide the information in the generated summary for systems
+    \item \textbf{Layout Bias} measures the distribution of information within a document for corpora and the distribution of sections in the documents that provide the information in the generated summary for systems
 \end{itemize}
 
-The authors later group those metrics into subjective and objective metrics.
+The authors categorize those metrics into subjective and objective.
 They assign the highest importance to the objective metrics of Pyramid Score and Inverse Pyramid Score,
-and propose that scientists introducing new MDS corpora should at least report values for those, although ideally all metrics should be considered.
-
+and propose that scientists introducing new MDS corpora shall at least report values for those, although ideally all metrics should be considered.
 
 \end{document}

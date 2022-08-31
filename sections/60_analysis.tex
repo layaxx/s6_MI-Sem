@@ -18,7 +18,7 @@ It meets all of the conditions mentioned above, as it was published in 2020, was
 
 Although the original papers authors state that they "develop an interactive web portal for imminent corpora to be uploaded and evaluated based
 on [their] proposed metrics", I was unable to find any link or other kind of reference to this.
-The paper does, however, include a link to the source code for their analysis on GitHub, which serves as the starting point for analysis of WCEP.
+The paper does, however, include a link to the source code for their analysis on GitHub, which although lacking documentation, served as the starting point for the following analysis of WCEP.
 
 For this paper I have forked the repository and updated the code for the corpus metrics to work with the WCEP dataset.
 I have also added documentation on how to use the code and which format the data is expected to have, which is missing in the original version.
@@ -47,6 +47,8 @@ Notable differences are, however, visible on the relevance and average documents
 The training set contains, on average, 15.47 (20.34\%) less documents per topic compared with the test set and 15.61 (20.49\%) less than the validation set.
 The relevancy of the training set is also notably closer to 0 compared with the other subsets.
 
+% TODO: plot distribution of number of articles / article length?
+
 \begin{figure}
     \includegraphics[width=\textwidth]{figures/analysis-2.eps}
     \caption{Scatter plot of Relevance and Redundancy shows no obvious difference between the subsets.} \label{fig:analysis-2}
@@ -58,6 +60,5 @@ The relevancy of the training set is also notably closer to 0 compared with the 
     \includegraphics[width=.49\textwidth]{figures/train62667.eps}
     \caption{Example plot of IDS for topic 70168 from the test subset and topic 62667 from the training set.} \label{fig:analysis-ids-test}
 \end{figure}
-% TODO: add link to github repo
 
 \end{document}

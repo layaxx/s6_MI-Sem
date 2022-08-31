@@ -2,29 +2,43 @@
 \begin{document}
 
 In the last section we determined that, as of August 2022, no paper has built upon these metrics, either proposing changes to them, criticizing or extending them.
-But are there any other metrics or biases not without direct reference to the original paper?
+We will now show other metrics and approaches to bias employed by researchers that (recently) published MDS corpora or systems.
 
 At the beginning of their paper, Dey et al. state the problem of missing standard corpora due the non-standardized tasks of MDS.
 The same is currently true for metrics of bias.
 While the authors aimed to establish a framework for this, the previous section showed that they have not yet succeeded.
 
-As a result, some papers use different metrics, that may aim at similar attributes. For example, a 2016 paper proposing a new MDS corpus and uses textual heterogeneity as a metric. \cite{zopf_maxime_peyrard_eckle-kohler_2016}
-While not exactly the same, it is introduced to determine the similarity of documents, just as IDS in the original paper.
+As a result, some papers use different metrics, that may aim at similar attributes.
+For example, a 2016 paper proposing a new MDS corpus uses textual heterogeneity as a metric. \cite{zopf_maxime_peyrard_eckle-kohler_2016}
+While not exactly the same, it is introduced to determine the similarity of documents, serving the same purpose as IDS in the original paper.
 
 Similarly, for the "Wikipedia Current Events Portal" (WCEP) dataset,
-which will be analyzed later in in this paper, the authors used "coverage" and "density" metrics to quantify abstractness,
-very similar to the Abstractness metric.\cite{WCEP-gholipour-ghalandari-etal-2020-large}
-These coverage and density have been used for single document summarizations earlier.\cite{grusky-etal-2018-newsroom}
+which will be analyzed more in-depth later in this paper, the authors used "coverage" and "density" metrics to quantify abstractness,
+similarly to the Abstractness metric.\cite{WCEP-gholipour-ghalandari-etal-2020-large}
+Coverage and density have been used for single document summarizations earlier.\cite{grusky-etal-2018-newsroom}
+
+
+\ref{tab:status-quo} shows a selection of recent papers introducing MDS corpora and their approach to bias and comparability.
+
+\begin{table}
+    \centering
+    \begin{tabular}{l|lll}
+                                                                                 & mention of bias               & comparability metrics & \\
+        \cline{1-3}
+        \textbf{WCEP}\cite{WCEP-gholipour-ghalandari-etal-2020-large}            & no                            & coverage, density     & \\
+        \textbf{MS2}\cite{MS2-https://doi.org/10.48550/arxiv.2104.06486}         & no                            & -                     & \\
+        \textbf{HowSumm}\cite{wikihow-https://doi.org/10.48550/arxiv.2110.03179} & no                            & coverage  density     & \\
+        \textbf{QMSumm}\cite{qmsum-https://doi.org/10.48550/arxiv.2104.05938}    & mentioned, but not quantified & -                     & \\
+        \multicolumn{1}{l}{}                                                     &                               &                       &
+    \end{tabular}
+
+    \caption{Recent papers introducing MDS corpora and their handling of bias/comparability. All papers also report basic statistics, i.e. metrics such as count and average length and performance of select MDS systems.}
+    \label{tab:status-quo}
+\end{table}
 
 
 While Dey et al. focus on structural biases, especially Layout Bias, corpora generated from human content, i.e. most if not all corpora, also display biases in their content. These usually carry over through MDS systems into the generated summaries. \cite{nadeem-etal-2021-stereoset}
 
 Even if the training corpus does not contain biases, systems have been shown to introduce biases, such as hallucinations, i.e. statements in the generated summary that are not included in the candidate documents and do not follow from them. This is correlated with exposure bias, caused by differences in documents between training corpus and data used for actual work. \cite{Exposure_bias_wang_sennrich_2020}
-
-
-% paper states that no previous similar study was conducted 
-% Did the authors themselves build upon their metrics /improve/change them
-
-% bias for longer sentences https://www.semanticscholar.org/reader/30370906b75eb04792b3f19763292996671517fd
 
 \end{document}
