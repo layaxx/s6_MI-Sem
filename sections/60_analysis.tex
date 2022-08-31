@@ -45,9 +45,8 @@ I have not been able to measure the Layout Bias and the Pyramid Scores, as it is
 Apart from obvious differences in size, the subsets of WCEP seem pretty homogenous after analysis.
 Notable differences are, however, visible on the relevance and average documents per topic metrics.
 The training set contains, on average, 15.47 (20.34\%) less documents per topic compared with the test set and 15.61 (20.49\%) less than the validation set.
+This can be seen well in \ref{fig:analysis-distribution}, where the training subset contains significantly less frequently topics with 100 documents.
 The relevancy of the training set is also notably closer to 0 compared with the other subsets.
-
-% TODO: plot distribution of number of articles / article length?
 
 \begin{figure}
     \includegraphics[width=\textwidth]{figures/analysis-2.eps}
@@ -59,6 +58,12 @@ The relevancy of the training set is also notably closer to 0 compared with the 
     \includegraphics[width=.49\textwidth]{figures/test70168.eps}
     \includegraphics[width=.49\textwidth]{figures/train62667.eps}
     \caption{Example plot of IDS for topic 70168 from the test subset and topic 62667 from the training set.} \label{fig:analysis-ids-test}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=.49\textwidth]{figures/Rplot01.pdf}
+    \includegraphics[width=.49\textwidth]{figures/Rplot02.pdf}
+    \caption{Distributions of summary length and number of articles per topic in the subsets. Left graph showcases subtle differences in length of summary distribution, right graph shows the cause for the difference in average number of articles discussed previously} \label{fig:analysis-distribution}
 \end{figure}
 
 \end{document}
