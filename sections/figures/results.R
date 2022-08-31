@@ -3,6 +3,7 @@ library(pacman)
 p_load(qlcMatrix)
 p_load(reshape)
 p_load(ggplot2)
+p_load(cowplot)
 
 dataR1 <- data.frame(
   lexrank = c(35.56, 33.1, 33.41, 38.27, 32.22),
@@ -38,28 +39,56 @@ dataF1 <- data.frame(
   row.names = c("DUC", "TAC", "Opin", "Multin", "CQAS")
 )
 
-m <- as.matrix(apply(apply(dataF1, 1, rank), 1, rev))
+plotData <- function(dataset, small = FALSE) {
+  m <- as.matrix(apply(apply(dataset, 1, rank), 1, rev))
 
-maximums <- as.list(rowMax(m))
-names(maximums) <- rownames(m)
+  maximums <- as.list(rowMax(m))
+  names(maximums) <- rownames(m)
 
-df <- melt(m)
-colnames(df) <- c("corpus", "system", "value")
+  df <- melt(m)
+  colnames(df) <- c("corpus", "system", "value")
 
-ggplot(df, aes(x = system, y = corpus, fill = ifelse(value == 1, NA, value))) +
-  geom_tile(color = "black") +
-  geom_text(aes(label = value), color = "black", size = 4) +
-  coord_fixed() +
-  scale_fill_gradient2(
-    na.value = "#4459d6",
-    low = "blue",
-    mid = "darkgray",
-    high = "white",
-    midpoint = 1
-  ) +
-  scale_x_discrete(position = "top") +
-  theme(
-    axis.line = element_blank(),
-    legend.position = "none",
-    panel.background = element_blank()
-  )
+  plot <- ggplot(df, aes(x = system, y = corpus, fill = ifelse(value == 1, NA, value))) +
+    geom_tile() +
+    geom_text(aes(label = value), color = "black", size = ifelse(small, 3, 4)) +
+    coord_fixed() +
+    scale_fill_gradient2(
+      na.value = "#6e9fea",
+      low = "blue",
+      mid = "darkgray",
+      high = "white",
+      midpoint = 1
+    ) +
+    scale_x_discrete(position = "top") +
+    theme(
+      axis.line = element_blank(),
+      legend.position = "none",
+      panel.background = element_blank()
+    )
+
+  if (small) {
+    return(plot + theme(
+      axis.line = element_blank(),
+      legend.position = "none",
+      panel.background = element_blank(),
+      axis.title = element_blank(),
+      axis.text = element_blank(),
+      axis.ticks = element_blank()
+    ))
+  }
+  plot
+}
+
+plotR1 <- plotData(dataR1)
+plotR2 <- plotData(dataR2, small = TRUE)
+plotF1 <- plotData(dataF1, small = TRUE)
+
+title <- ggdraw() + draw_label("Conditions for site 05430175", fontface = "bold")
+bottom_row <- plot_grid(NULL, plotF1, plotR2, NULL,
+  rel_heights = c(0.4, 1, 1, 0.2),
+  nrow = 4, labels = c("", "ROUGE-2", "F1 Score")
+)
+plot_grid(plotR1, bottom_row,
+  ncol = 2, labels = c("ROUGE-1", ""),
+  rel_widths = c(5, 2)
+)
